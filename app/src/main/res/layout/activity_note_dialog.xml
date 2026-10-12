@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚡ 快速记录 → FTP"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 内容（自动带时间戳前缀，可删） -->
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="要记录的内容（如：电话 138xxxx、待办）"
+        android:inputType="text"
+        android:gravity="top"
+        android:minLines="2"
+        android:maxLines="4"
+        android:textSize="15sp" />
+
+    <!-- 目标 FTP 文件（可改） -->
+    <EditText
+        android:id="@+id/et_note_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="FTP 目标文件（示例：根目录/目录/目录/文件.txt）"
+        android:inputType="text"
+        android:textSize="13sp"
+        android:textColor="#888" />
+
+    <TextView
+        android:id="@+id/tv_note_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textSize="12sp"
+        android:textColor="#0A7A4A" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:id="@+id/btn_note_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="记到 FTP" />
+
+        <Button
+            android:id="@+id/btn_note_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>

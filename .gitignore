@@ -1,0 +1,7 @@
+# ── Gradle / 构建产物 ──────────────────────────────
+.gradle/
+build/
+
+# ── 个人环境（每人 SDK 路径不同，不入库）─────────────
+local.properties
+keystore-*.jks

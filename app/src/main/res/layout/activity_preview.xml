@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 工具栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="#222">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp"
+            android:text="← 返回" />
+
+        <TextView
+            android:id="@+id/tv_filename"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#fff"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:layout_marginHorizontal="8dp" />
+    </LinearLayout>
+
+    <!-- 状态条 -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:textSize="11sp"
+        android:textColor="#8f8"
+        android:background="#333" />
+
+    <!-- 预览区：图片显示 ImageView，非图片显示提示文字 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#111">
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="预览" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textColor="#888"
+            android:padding="16dp"
+            android:gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- APK 信息卡：下载完成后显示（图标 + 包名/版本/大小），仿 ES 体验 -->
+    <LinearLayout
+        android:id="@+id/layout_apk_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="#1a1a2e"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_apk_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="应用图标" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tv_apk_package"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#8be9ff" />
+
+            <TextView
+                android:id="@+id/tv_apk_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#ccc" />
+
+            <TextView
+                android:id="@+id/tv_apk_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#ccc" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 安装按钮：仅 .apk 显示 -->
+    <Button
+        android:id="@+id/btn_install"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="0dp"
+        android:textSize="13sp"
+        android:visibility="gone"
+        android:background="#2563eb"
+        android:textColor="#fff"
+        android:text="📦 安装（APK）" />
+
+    <!-- 底部操作：分享 + 存到手机 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#222">
+
+        <Button
+            android:id="@+id/btn_share"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_marginEnd="4dp"
+            android:text="📤 分享到微信/系统" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_marginStart="4dp"
+            android:text="📥 存到手机" />
+    </LinearLayout>
+</LinearLayout>
